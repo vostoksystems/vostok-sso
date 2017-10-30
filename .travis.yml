@@ -12,5 +12,5 @@ jobs:
       script:
         - if [ "$TRAVIS_BRANCH" == "release" ]; then
             ./gradlew build;
-            ./gradlew releaseToDocker -PdockerUsername=$DOCKER_USER -PdockerPassword=$DOCKER_PASSWORD;
+            ./gradlew releaseDocker -PdockerUsername=$DOCKER_USER -PdockerPassword=$DOCKER_PASSWORD;
           fi
