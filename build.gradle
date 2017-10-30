@@ -1,0 +1,15 @@
+group 'taxi.drive.app'
+version projectVersion
+
+task releaseDocker {
+    doLast {
+        def imageName = 'vostok-sso'
+
+        exec { commandLine 'docker', 'build', '-t', "markklim/${imageName}:${version}", '.' }
+        exec { commandLine 'docker', 'login', "-u=${dockerUsername}", "-p=${dockerPassword}" }
+        exec { commandLine 'docker', 'push', "markklim/${imageName}:${version}" }
+        exec { commandLine 'docker', 'rmi', "markklim/${imageName}:${version}" }
+    }
+}
+
+
