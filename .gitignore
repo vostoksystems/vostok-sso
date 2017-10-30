@@ -1,3 +1,4 @@
 /.idea/
 /build/
 /.gradle/
+/keycloak/themes/keycloak/common/resources/node_modules/
