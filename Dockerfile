@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM jboss/base-jdk:8
 
 ADD /keycloak /keycloak
 
